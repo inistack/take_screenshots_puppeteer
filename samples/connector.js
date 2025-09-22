@@ -7,8 +7,8 @@ export async function remoteBrowserPage() {
         'browserVersion': 'latest',
         'LT:Options': {
             'platform': 'Windows 10',
-            'build': 'puppeteer-build-1',
-            'name': 'My first Puppeteer test',
+            'build': 'puppeteer-screenshot-build',
+            'name': 'Take Screenshots Puppeteer',
             'resolution': '1366x768',
             'user': process.env.LT_USERNAME || "Your Username",
             'accessKey': process.env.LT_ACCESS_KEY || "Your Access Key",
