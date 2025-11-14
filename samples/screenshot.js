@@ -7,6 +7,8 @@ import { remoteBrowserPage } from "./connector.js";
 
     // Take screenshot
     await page.goto('https://www.lambdatest.com');
+    // Set screen size.
+    await page.setViewport({width: 1080, height: 1024});
     await page.screenshot({ path: 'lambdatest.png' });
     console.log('Screenshot taken!')
 
@@ -17,7 +19,7 @@ import { remoteBrowserPage } from "./connector.js";
 
     // Take screenshot of specific area of the page
     await page.goto('https://www.lambdatest.com');
-    await page.screenshot({ path: "area_snap.png", clip: { x: 0, y: 70, width: 500, height: 700 } })
+    await page.screenshot({ path: "area_snap.png", clip: { x: 0, y: 80, width: 600, height: 800 } })
     console.log('Screenshot of specific area taken!')
 
     // Take screenshot of specific element
