@@ -34,6 +34,20 @@ import { remoteBrowserPage } from "./connector.js";
     }
     console.log('Screenshots of elements with class name taken!')
 
+    // Generate PDF from page
+    await page.goto('https://www.lambdatest.com');
+    await page.pdf({ 
+        path: 'lambdatest.pdf',
+        format: 'A4',
+        printBackground: true,
+        margin: {
+            top: '20px',
+            right: '20px',
+            bottom: '20px',
+            left: '20px'
+        }
+    });
+    console.log('PDF generated!')
 
     // set test status to passed
     await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'passed', remark: "Test Passed" } })}`);
